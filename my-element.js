@@ -9,7 +9,7 @@
 import {LitElement, html, css} from 'lit';
 import { repeat } from 'lit-html/directives/repeat.js';
 import  './list-element.js'
-import tpeRegistry from 'tpe2/tpeRegistry'
+import { tpeRegistry } from 'tpe2/lib/tpeRegistry'
 
 // import { flip } from '@lit-labs/motion';
 
