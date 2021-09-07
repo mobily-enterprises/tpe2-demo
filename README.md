@@ -1,1 +1,1 @@
-# tpe2-demo
+# tpe-demo

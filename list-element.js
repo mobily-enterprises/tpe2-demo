@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import { repeat } from 'lit-html/directives/repeat'
-import { tpeRegistry } from 'tpe2/lib/tpeRegistry'
+import { tpeRegistry } from 'tpe/lib/tpeRegistry'
 
 class ListElement  extends LitElement {
 

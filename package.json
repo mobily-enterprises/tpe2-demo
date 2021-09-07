@@ -8,7 +8,9 @@
   },
   "dependencies": {
     "lit": "^2.0.0-rc.4",
-    "lit-element": "^3.0.0-rc.1"
+    "lit-element": "^3.0.0-rc.1",
+    "tpe": "^1.x.x",
+    "tpe-material": "^1.x.x"
   },
   "author": "",
   "license": "ISC"
