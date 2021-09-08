@@ -1,16 +1,17 @@
 {
   "name": "tpe-demo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "es6-dev-server": "0.0.10",
     "lit": "^2.0.0-rc.4",
     "lit-element": "^3.0.0-rc.1",
-    "tpe": "^1.x.x",
-    "tpe-material": "^1.x.x"
+    "tpe": "^1.0.4",
+    "tpe-material": "^1.0.4"
   },
   "author": "",
   "license": "ISC"

@@ -10,7 +10,7 @@
 
     <!--
     <script type="module" src="./node_modules/tpe/tpe-classes.js"></script>
-    <script type="module" src="./node_modules/tpe-material/elements/nn-textarea.js"></script>
+    <script type="module" src="./node_modules/tpe-material/elements/nn-textarea-class.js"></script>
     <script type="module" src="./node_modules/tpe/tpe-define.js"></script>
 -->
 
@@ -35,15 +35,20 @@
   </head>
   <body>
     <style>
-      /* This should not be necessary */
-      ee-tabs [slot="content"] {
-        display: none;
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
       }
+
+      /* This should not be necessary */
+      /* ee-tabs [slot="content"] {
+        display: none;
+      } */
   
       /* This should not be necessary */
-      ee-tabs [slot="content"][active] {
+      /* ee-tabs [slot="content"][active] {
         display: initial;
-      }
+      } */
   
       ee-table {
         box-sizing: border-box;
@@ -61,13 +66,13 @@
     <body>
       <ee-header menu header-title="TPE demo"></ee-header>
   
-      <ee-tabs default="tab2" >
+      <ee-tabs default="tab1" >
         <span name="tab1">Form</span>
         <div name="tab1" slot="content">
           <nn-form>
 
             <h2>Textarea (material)</h2>
-            <nn-textarea id="textarea"></nn-textarea>
+            <nn-textarea id="textarea" label="Textarea label" placeholder="This is a placeholder text for the textarea input field"></nn-textarea>
         
             <h2>Meter</h2>
             <nn-meter id="meter" min=10 max=20 value=15></nn-meter>
@@ -87,7 +92,8 @@
             <h2>Range</h2>
             <nn-input-range value=10 id="input-range" label="Range" min=10 max=100></nn-input-range>
         
-            <h2>Checkbox</h2>
+        font-size: 1.2rem;
+        <h2>Checkbox</h2>
             <nn-input-checkbox id="input-checkbox" label="Checkbox"></nn-input-checkbox>
         
             <h2>Radio</h2>
@@ -147,11 +153,11 @@
         </div>
       </ee-tabs>
       <ee-drawer backdrop>
-        <a href="/dev">Home</a>
-        <a href="/dev#tab1">Tab 1</a>
-        <a href="/dev#tab2">Tab 2</a>
-        <a href="/dev#tab3">Tab 3</a>
-        <a href="/dev#tab4">Tab 4</a>
+        <a href="/">Home</a>
+        <a href="#tab1">Tab 1</a>
+        <a href="#tab2">Tab 2</a>
+        <a href="#tab3">Tab 3</a>
+        <a href="#tab4">Tab 4</a>
       </ee-drawer>
     </body>
     <script>
@@ -164,24 +170,22 @@
       document.addEventListener('DOMContentLoaded', (event) => {
         console.log('ready')
       
-        /*
         const header = document.querySelector('ee-header')
         header.addEventListener('menu-clicked', toggleDrawer)
   
-        const dndTable = document.querySelector('ee-table#drag-example-table')
-        // Redefine table dragEnter hook
-        dndTable.handleDragenter = (e, movingItem, targetItem) => {
-          dndTable.insertBefore(movingItem, targetItem)
-        }
+        // const dndTable = document.querySelector('ee-table#drag-example-table')
+        // // Redefine table dragEnter hook
+        // dndTable.handleDragenter = (e, movingItem, targetItem) => {
+        //   dndTable.insertBefore(movingItem, targetItem)
+        // }
   
-        const dnd = document.querySelector('dnd-example')
-        dnd.data = [
-          { id: 0, name: 'content 0' },
-          { id: 1, name: 'content 1' },
-          { id: 2, name: 'content 2' },
-          { id: 3, name: 'content 3' }
-        ]
-        */
+        // const dnd = document.querySelector('dnd-example')
+        // dnd.data = [
+        //   { id: 0, name: 'content 0' },
+        //   { id: 1, name: 'content 1' },
+        //   { id: 2, name: 'content 2' },
+        //   { id: 3, name: 'content 3' }
+        // ]
       })
       // const table = document.getElementById('drag-example-table')
     </script>
