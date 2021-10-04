@@ -9,9 +9,8 @@
 import {LitElement, html, css} from 'lit';
 import { repeat } from 'lit-html/directives/repeat.js';
 import  './list-element.js'
-import { tpeRegistry } from 'tpe/lib/tpeRegistry'
 
-// import { flip } from '@lit-labs/motion';
+// import { animate } from '@lit-labs/motion';
 
 /**
  * An example element.
@@ -72,7 +71,7 @@ export class MyElement extends LitElement {
   render() {
     return html`
       <h1>Drag them!</h1>
-      <nn-button></nn-button>
+      <!-- <nn-button></nn-button> -->
       <!-- Emulating our nested lists scenario -->
       <div class="lists">
         ${repeat(this.lists, l => l, (list, index) => {
@@ -123,4 +122,4 @@ export class MyElement extends LitElement {
   }
 }
 
-tpeRegistry.register('my-element', MyElement);
+customElements.define('my-element', MyElement);

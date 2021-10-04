@@ -1,7 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import { repeat } from 'lit-html/directives/repeat'
-import { tpeRegistry } from 'tpe/lib/tpeRegistry'
-
+import { animate } from '@lit-labs/motion'
 class ListElement  extends LitElement {
 
   static get styles() {
@@ -9,6 +8,8 @@ class ListElement  extends LitElement {
       :host {
         display: block;
         padding: 10px;
+        background: none;
+        border-radius: 10px;
       }
 
       .list {
@@ -103,6 +104,7 @@ class ListElement  extends LitElement {
           ${repeat(this.data, i => i.id, (item, index) => {
             return html`
               <li class="item" data-id=${item.id} data-index=${index}
+                ${animate()}
                 draggable="true"
                 @dragstart=${this._dragStart} 
                 @dragend=${this._dragEnd} 
@@ -154,7 +156,7 @@ class ListElement  extends LitElement {
     const target = e.currentTarget
     const targetList = this.data
     requestAnimationFrame(() => {
-      target.classList.add('target')
+      // target.classList.add('target')
     })
     e.preventDefault()
     e.dataTransfer.dropEffect = 'move'
@@ -171,7 +173,7 @@ class ListElement  extends LitElement {
   _dragLeave (e) {
     const target = e.currentTarget
     requestAnimationFrame(() => {
-      target.classList.remove('target')
+      // target.classList.remove('target')
     })
     this.dispatchEvent(new CustomEvent('dnd-target', {
       composed: true,
@@ -186,7 +188,7 @@ class ListElement  extends LitElement {
   _drop (e) {
     const target = e.currentTarget
     requestAnimationFrame(() => {
-      target.classList.remove('target')
+      // target.classList.remove('target')
     })
     e.preventDefault()
     this.dispatchEvent(new CustomEvent('dnd-drop', { 
@@ -196,4 +198,4 @@ class ListElement  extends LitElement {
   }
 }
 
-tpeRegistry.register('list-element', ListElement);
+customElements.define('list-element', ListElement)
